@@ -1,5 +1,5 @@
 import {EventRepository} from "../../domain/Event/interface/EventRepository.interface";
-
+import {Event} from "../../domain/Event/Event";
 
 export class AllEventsFinder{
 
@@ -8,7 +8,7 @@ export class AllEventsFinder{
     }
 
 
-    public async find(): Promise<any[]>{
+    public async find(): Promise<Event[]>{
         return []
     }
 }

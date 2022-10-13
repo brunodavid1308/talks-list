@@ -1,6 +1,7 @@
 import {mock} from "ts-mockito"
 import {AllEventsFinder} from "../../../src/features/application/Event/AllEventsFinder";
 import {EventRepository} from "../../../src/features/domain/Event/interface/EventRepository.interface";
+import {Event} from "../../../src/features/domain/Event/Event";
 
 /**
  *  checking driven development
@@ -18,13 +19,13 @@ import {EventRepository} from "../../../src/features/domain/Event/interface/Even
 
 describe('Find all events', ()=>{
 
-    it('should return an array',  async ()=>  {
+    it("should return all events", async ()=> {
         const allEventFinder = buildAllEventFinder()
 
-        const result = await allEventFinder.find()
+        const events = await allEventFinder.find()
 
-        expect(result).toBeInstanceOf(Array)
-    });
+        expect(events).toBeInstanceOf(Array<Event>)
+    })
 
 
 })
