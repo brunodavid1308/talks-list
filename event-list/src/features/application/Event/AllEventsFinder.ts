@@ -1,14 +1,14 @@
-import {EventRepository} from "../../domain/Event/interface/EventRepository.interface";
-import {Event} from "../../domain/Event/Event";
+import { EventRepository } from "../../domain/Event/interface/EventRepository.interface";
+import { Event } from "../../domain/Event/Event";
+import { inject, injectable } from "tsyringe";
 
-export class AllEventsFinder{
+@injectable()
+export class AllEventsFinder {
+  constructor(
+    @inject("EventRepository") private eventRepository: EventRepository
+  ) {}
 
-
-    constructor(private eventRepository: EventRepository) {
-    }
-
-
-    public async find(): Promise<Event[]>{
-        return this.eventRepository.findAll()
-    }
+  public async find(): Promise<Event[]> {
+    return this.eventRepository.findAll();
+  }
 }
