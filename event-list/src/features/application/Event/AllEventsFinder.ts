@@ -9,6 +9,6 @@ export class AllEventsFinder{
 
 
     public async find(): Promise<Event[]>{
-        return []
+        return this.eventRepository.findAll()
     }
 }

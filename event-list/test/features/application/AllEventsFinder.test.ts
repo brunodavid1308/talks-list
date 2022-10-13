@@ -1,21 +1,7 @@
-import {mock} from "ts-mockito"
+import {instance, mock, when} from "ts-mockito"
 import {AllEventsFinder} from "../../../src/features/application/Event/AllEventsFinder";
 import {EventRepository} from "../../../src/features/domain/Event/interface/EventRepository.interface";
 import {Event} from "../../../src/features/domain/Event/Event";
-
-/**
- *  checking driven development
- *
- *
- *
- *
- *  const allEventsFinder = AllEventsFinder(eventsRepository); [V]
- *  Debería devolver un array
- *  Debería devolver un array de eventos
- *
- *
- */
-
 
 describe('Find all events', ()=>{
 
@@ -32,6 +18,7 @@ describe('Find all events', ()=>{
 
 function buildAllEventFinder() {
     const eventRepository = mock<EventRepository>();
+    when(eventRepository.findAll()).thenResolve([])
 
-    return new AllEventsFinder(eventRepository)
+    return new AllEventsFinder(instance(eventRepository))
 }
