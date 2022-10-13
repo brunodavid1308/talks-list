@@ -15,14 +15,21 @@ describe("EventListView", () => {
     setup();
   });
 
-  it("should render title of the event", async () => {
+  const assertTextInDocument = (text: string) => {
+    expect(screen.getByText(text)).toBeInTheDocument();
+  };
+
+  it("should render the event information", async () => {
     await act(async () => {
       render(<EventListView />);
       await new Promise((resolve) => setTimeout(resolve, 0));
     });
 
     events.forEach((event) => {
-      expect(screen.getByText(event.title.value)).toBeInTheDocument();
+      assertTextInDocument(event.title.value);
+      assertTextInDocument(event.shortDescription.value);
+      assertTextInDocument(event.date.getInit().toYYMMDD());
+      assertTextInDocument(event.location.getCity());
     });
   });
 });

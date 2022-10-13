@@ -19,7 +19,14 @@ export const EventListView = () => {
   return (
     <div>
       {events.map((event) => {
-        return <div key={event.uuid.value}>{event.title.value}</div>;
+        return (
+          <div key={event.uuid.value}>
+            <span>{event.title.value}</span>
+            <span>{event.shortDescription.value}</span>
+            <span>{event.date.getInit().toYYMMDD()}</span>
+            <span>{event.location.getCity()}</span>
+          </div>
+        );
       })}
     </div>
   );
