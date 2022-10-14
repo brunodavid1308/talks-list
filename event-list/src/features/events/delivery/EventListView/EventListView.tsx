@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { container } from "tsyringe";
-import { AllEventsFinder } from "../../application/Event/AllEventsFinder";
+import { AllEventsFinder } from "../../application/AllEventsFinder";
 import { Event } from "../../domain/Event/Event";
 
 export const EventListView = () => {

@@ -12,9 +12,10 @@
  */
 import "reflect-metadata";
 import { instance, mock, when } from "ts-mockito";
-import { EventRepository } from "../../../src/features/domain/Event/interface/EventRepository.interface";
-import { ByUuidEventFinder } from "../../../src/features/application/Event/ByUuidEventFinder";
-import { EventMother } from "../../helpers/EventMother";
+import { ByUuidEventFinder } from "../../../../src/features/events/application/ByUuidEventFinder";
+import { EventRepository } from "../../../../src/features/events/domain/Event/interface/EventRepository.interface";
+import { EventMother } from "../../../helpers/EventMother";
+
 
 const validUuid = "uuid";
 

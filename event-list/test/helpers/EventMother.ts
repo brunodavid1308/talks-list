@@ -1,5 +1,5 @@
-import { Event, EventDto } from "../../src/features/domain/Event/Event";
-import { DomainDate } from "../../src/features/domain/Shared/valueObjects/DomainDate";
+import { DomainDate } from "../../src/features/events/domain/Shared/valueObjects/DomainDate";
+import { Event, EventDto } from "../../src/features/events/domain/Event/Event";
 
 export class EventMother {
   public static random(params?: Partial<EventDto>): Event {

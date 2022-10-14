@@ -1,8 +1,7 @@
 import "reflect-metadata";
 import { instance, mock, when } from "ts-mockito";
-import { AllEventsFinder } from "../../../src/features/application/Event/AllEventsFinder";
-import { EventRepository } from "../../../src/features/domain/Event/interface/EventRepository.interface";
-import { Event } from "../../../src/features/domain/Event/Event";
+import { EventRepository } from "../../../../src/features/events/domain/Event/interface/EventRepository.interface";
+import { AllEventsFinder } from "../../../../src/features/events/application/AllEventsFinder";
 
 describe("Find all events", () => {
   it("should return all events", async () => {

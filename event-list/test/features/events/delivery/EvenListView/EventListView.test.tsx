@@ -1,12 +1,13 @@
 import "reflect-metadata";
 import { render, screen } from "@testing-library/react";
-import { EventListView } from "../../../../src/features/delivery/EventListView/EventListView";
-import { EventMother } from "../../../helpers/EventMother";
+
 import { instance, mock, when } from "ts-mockito";
-import { EventRepository } from "../../../../src/features/domain/Event/interface/EventRepository.interface";
 import { container } from "tsyringe";
 import "@testing-library/jest-dom";
 import { act } from "react-dom/test-utils";
+import { EventMother } from "../../../../helpers/EventMother";
+import { EventListView } from "../../../../../src/features/events/delivery/EventListView/EventListView";
+import { EventRepository } from "../../../../../src/features/events/domain/Event/interface/EventRepository.interface";
 
 const events = EventMother.collection(1);
 

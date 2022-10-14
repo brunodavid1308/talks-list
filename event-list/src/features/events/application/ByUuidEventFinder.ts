@@ -1,5 +1,5 @@
-import {EventRepository} from "../../domain/Event/interface/EventRepository.interface";
-import {Event} from "../../domain/Event/Event";
+import {Event} from "../domain/Event/Event";
+import { EventRepository } from "../domain/Event/interface/EventRepository.interface";
 
 
 export class ByUuidEventFinder {
